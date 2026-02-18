@@ -26,9 +26,9 @@ export async function getJobsList() {
 /**
  * Step 5 — Envía la postulación a una posición.
  * POST {BASE_URL}/api/candidate/apply-to-job
- * Body: { uuid, jobId, candidateId, repoUrl }
+ * Body: { uuid, jobId, candidateId, applicationId, repoUrl }
  */
-export async function submitApplication({ uuid, jobId, candidateId, repoUrl }) {
+export async function submitApplication({ uuid, jobId, candidateId, applicationId, repoUrl }) {
   const res = await fetch(`${BASE_URL}/api/candidate/apply-to-job`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -36,6 +36,7 @@ export async function submitApplication({ uuid, jobId, candidateId, repoUrl }) {
       uuid,
       jobId,
       candidateId,
+      applicationId,
       repoUrl,
     }),
   });

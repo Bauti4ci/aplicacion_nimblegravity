@@ -28,6 +28,7 @@ function JobList({ jobs, candidate }) {
         uuid: candidate.uuid,
         jobId: job.id,
         candidateId: candidate.candidateId,
+        applicationId: candidate.applicationId,
         repoUrl: url,
       });
       setMessage((prev) => ({ ...prev, [job.id]: 'Postulación enviada correctamente.' }));
