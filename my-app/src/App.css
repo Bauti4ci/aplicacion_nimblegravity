@@ -1,0 +1,165 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+}
+
+/* Fondo: azul oscuro + formas en gradiente difuminadas */
+.App-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #0f1419;
+}
+
+.App-bg__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.App-bg__blob--1 {
+  width: 70vmax;
+  height: 70vmax;
+  background: radial-gradient(circle, #ff2d92 0%, #c026d3 50%, transparent 70%);
+  top: -20%;
+  left: -15%;
+}
+
+.App-bg__blob--2 {
+  width: 55vmax;
+  height: 55vmax;
+  background: radial-gradient(circle, #7c3aed 0%, #4f46e5 40%, transparent 70%);
+  bottom: -15%;
+  right: -10%;
+}
+
+.App-bg__blob--3 {
+  width: 50vmax;
+  height: 50vmax;
+  background: radial-gradient(circle, #06b6d4 0%, #0ea5e9 40%, transparent 70%);
+  top: 40%;
+  left: 30%;
+}
+
+.App-bg__blob--4 {
+  width: 45vmax;
+  height: 45vmax;
+  background: radial-gradient(circle, #ec4899 0%, #8b5cf6 50%, transparent 70%);
+  bottom: 20%;
+  left: -5%;
+}
+
+.App-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Glassmorphism: tarjeta principal */
+.App-glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem 2.5rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+.App-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.App-intro,
+.App-user {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.App-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Input tipo glass */
+.App-input {
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  min-width: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.App-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.App-input:focus {
+  outline: none;
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+.App-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botón con acento magenta/violeta */
+.App-button {
+  padding: 0.65rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #c026d3 0%, #7c3aed 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.App-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.45);
+}
+
+.App-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.App-error {
+  margin: 0.75rem 0 0;
+  color: #fca5a5;
+  font-size: 0.95rem;
+}
+
+.App-main {
+  padding: 1.5rem 0 2rem;
+  width: 100%;
+  max-width: 560px;
+}
