@@ -25,10 +25,10 @@ function JobList({ jobs, candidate }) {
     setMessage((prev) => ({ ...prev, [job.id]: null }));
     try {
       await submitApplication({
+        uuid: candidate.uuid,
         jobId: job.id,
         candidateId: candidate.candidateId,
-        applicationId: candidate.applicationId,
-        repositoryUrl: url,
+        repoUrl: url,
       });
       setMessage((prev) => ({ ...prev, [job.id]: 'Postulación enviada correctamente.' }));
     } catch (err) {
